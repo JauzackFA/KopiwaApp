@@ -1,20 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:kopiwa/models/shop.dart';
+import 'package:kopiwa/pages/cart_page.dart';
+import 'package:kopiwa/pages/landing_page.dart';
+import 'package:kopiwa/pages/list_menu_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => Shop(),
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  const MainApp({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const LandingPage(),
+      routes: {
+        '/landingpage': (context) => const LandingPage(),
+        '/listmenu': (context) => const ListMenu(),
+        '/cartpage': (context) => const CartPage(),
+      },
     );
   }
 }

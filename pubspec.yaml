@@ -1,19 +1,41 @@
 name: kopiwa
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: ">=2.19.2 <3.0.0"
 
 dependencies:
+  carousel_slider: ^4.2.1
   flutter:
     sdk: flutter
-
+  flutter_launcher_icons: ^0.13.1
+  smooth_page_indicator: ^1.1.0
+  provider:
 dev_dependencies:
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 flutter:
+  assets:
+    - lib/assets/americano.jpg
+    - lib/assets/hazelnut-latte.png
+    - lib/assets/ice-cappuccino.jpg
+    - lib/assets/ice-lime.jpg
+    - lib/assets/matcha-latte.jpg
+    - lib/assets/mocktail.jpg
+    - lib/assets/logo-kopigo1.png
+    - lib/assets/promo-diary1.jpg
+    - lib/assets/puasa.jpg
+
   uses-material-design: true
+  fonts:
+    - family: Bold
+      fonts:
+        - asset: lib/assets/TruenoBd.otf
+
+    - family: Light
+      fonts:
+        - asset: lib/assets/TruenoUltLt.otf
